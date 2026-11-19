@@ -1,6 +1,6 @@
 """Build a debug APK using installed Android SDK tools, without Gradle downloads."""
 from pathlib import Path
-import os,subprocess,tempfile,zipfile,xml.etree.ElementTree as ET,importlib.util
+import os,subprocess,tempfile,zipfile,xml.etree.ElementTree as ET,importlib.util,shutil
 root=Path(__file__).resolve().parent
 sdk=Path(os.environ.get('ANDROID_HOME',str(Path.home()/'Android/Sdk')))
 platform=sorted((sdk/'platforms').glob('android-*'))[-1]/'android.jar'
@@ -10,7 +10,7 @@ with tempfile.TemporaryDirectory() as tmp:
  t=Path(tmp);(t/'classes').mkdir();(t/'dex').mkdir()
  def run(*args):subprocess.run([str(x) for x in args],check=True)
  source=root/'android/app/src/main'
- manifest=(source/'AndroidManifest.xml').read_text().replace('<manifest ', '<manifest package="love.onlyyours" android:versionCode="17" android:versionName="0.4.4" ',1).replace(' <uses-permission',' <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="35"/>\n <uses-permission',1)
+ manifest=(source/'AndroidManifest.xml').read_text().replace('<manifest ', '<manifest package="love.onlyyours" android:versionCode="18" android:versionName="0.4.5" ',1).replace(' <uses-permission',' <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="35"/>\n <uses-permission',1)
  manifest=ET.fromstring(manifest)
  spec=importlib.util.spec_from_file_location('sdkbuild',root/'android-sdk-build.py');sdkbuild=importlib.util.module_from_spec(spec);spec.loader.exec_module(sdkbuild)
  (t/'firebase').mkdir();jars,resource_dirs,packages=sdkbuild.prepare(Path('/tmp/oy-firebase-sdk'),t/'firebase',manifest)
@@ -20,7 +20,8 @@ with tempfile.TemporaryDirectory() as tmp:
  for i,res in enumerate(resource_dirs):
   dest=t/('lib-'+str(i)+'.zip');run(tools/'aapt2','compile','--dir',res,'-o',dest);library_zips+=['-R',dest]
 
- run(tools/'aapt2','compile','--dir',source/'res','-o',t/'res.zip')
+ shutil.copytree(source/'res',t/'app-res',ignore=shutil.ignore_patterns('*.example.xml'))
+ run(tools/'aapt2','compile','--dir',t/'app-res','-o',t/'res.zip')
  run(tools/'aapt2','link',*library_zips,'-R',t/'res.zip','--auto-add-overlay','--extra-packages',':'.join(packages),'--java',t/'generated','-I',platform,'--manifest',t/'AndroidManifest.xml','-o',t/'base.apk')
  run('javac','-source','8','-target','8','-classpath',os.pathsep.join(map(str,[platform,*jars])),'-d',t/'classes',*list((source/'java').rglob('*.java')),*list((t/'generated').rglob('*.java')))
  run(tools/'d8','--min-api','30','--lib',platform,'--output',t/'dex',*list((t/'classes').rglob('*.class')),*jars)
