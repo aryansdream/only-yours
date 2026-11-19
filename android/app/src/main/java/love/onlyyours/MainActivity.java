@@ -47,9 +47,10 @@ public class MainActivity extends Activity {
   cover=new TextView(this);cover.setText("♡\nOnly Yours\nYour little world is locked.");cover.setGravity(Gravity.CENTER);cover.setTextSize(25);cover.setTextColor(0xff81324b);cover.setBackgroundColor(0xfffbf7f4);
   frame.addView(cover,new android.widget.FrameLayout.LayoutParams(-1,-1));setContentView(frame);
   cover.setOnClickListener(v->authenticate());
+  LoveNotifications.handleNudgeIntent(this,getIntent());
   if(LoveNotifications.handleIntent(this,getIntent())){setShowWhenLocked(true);setTurnScreenOn(true);}
  }
- @Override protected void onNewIntent(Intent intent){super.onNewIntent(intent);setIntent(intent);if(LoveNotifications.handleIntent(this,intent)){setShowWhenLocked(true);setTurnScreenOn(true);if(unlocked&&web!=null)web.evaluateJavascript("window.dispatchEvent(new Event('onlyyours:notification-action'))",null);else authenticate();}}
+ @Override protected void onNewIntent(Intent intent){super.onNewIntent(intent);setIntent(intent);if(LoveNotifications.handleNudgeIntent(this,intent)){if(unlocked&&web!=null)web.evaluateJavascript("window.dispatchEvent(new Event('onlyyours:notification-action'))",null);else authenticate();}if(LoveNotifications.handleIntent(this,intent)){setShowWhenLocked(true);setTurnScreenOn(true);if(unlocked&&web!=null)web.evaluateJavascript("window.dispatchEvent(new Event('onlyyours:notification-action'))",null);else authenticate();}}
  @Override protected void onStart(){super.onStart();foreground=true;if(!picking)authenticate();}
  @Override protected void onResume(){super.onResume();if(web!=null&&!picking&&!prompting&&unlocked)web.postDelayed(()->{if(unlocked&&!prompting)web.evaluateJavascript("window.dispatchEvent(new Event('onlyyours:unlocked'))",null);},150);}
  private void savedUnlock(boolean force){runOnUiThread(()->{if(prompting||isFinishing())return;if(force){unlocked=false;unlockedSavedLogin="";web.setVisibility(View.INVISIBLE);cover.setVisibility(View.VISIBLE);}if(unlocked)showApp();else authenticate();});}
@@ -138,6 +139,7 @@ public class MainActivity extends Activity {
   @JavascriptInterface public void notifyIncomingCall(String id,boolean video){if(getPreferences(0).getBoolean("alerts",false))LoveNotifications.incoming(MainActivity.this,id,video,System.currentTimeMillis());}
   @JavascriptInterface public void clearIncomingCall(String id){LoveNotifications.clearCall(MainActivity.this,id);}
   @JavascriptInterface public String consumeCallAction(){return unlocked?LoveNotifications.consumeAction(MainActivity.this):"";}
+  @JavascriptInterface public String consumeNudgeAction(){return unlocked?LoveNotifications.consumeNudge(MainActivity.this):"";}
   @JavascriptInterface public void notifyLove(){if(getPreferences(0).getBoolean("alerts",false))LoveAlerts.alert(MainActivity.this);}
   @JavascriptInterface public void saveAttachment(String name,String type,String data){if(data==null||data.length()>6000000)return;try{pendingSave=android.util.Base64.decode(data,android.util.Base64.DEFAULT);}catch(Exception e){return;}runOnUiThread(()->{picking=true;Intent i=new Intent(Intent.ACTION_CREATE_DOCUMENT);i.addCategory(Intent.CATEGORY_OPENABLE);i.setType(type==null?"application/octet-stream":type);i.putExtra(Intent.EXTRA_TITLE,name==null?"attachment":name.replaceAll("[/\\\\]","_"));try{startActivityForResult(i,11);}catch(Exception e){pendingSave=null;picking=false;}});}
   @JavascriptInterface public void kiss(){android.os.Vibrator v=(android.os.Vibrator)getSystemService(VIBRATOR_SERVICE);if(v!=null)v.vibrate(android.os.VibrationEffect.createWaveform(new long[]{0,40,70,40},-1));}
