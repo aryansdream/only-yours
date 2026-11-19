@@ -10,7 +10,7 @@ with tempfile.TemporaryDirectory() as tmp:
  t=Path(tmp);(t/'classes').mkdir();(t/'dex').mkdir()
  def run(*args):subprocess.run([str(x) for x in args],check=True)
  source=root/'android/app/src/main'
- manifest=(source/'AndroidManifest.xml').read_text().replace('<manifest ', '<manifest package="love.onlyyours" android:versionCode="18" android:versionName="0.4.5" ',1).replace(' <uses-permission',' <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="35"/>\n <uses-permission',1)
+ manifest=(source/'AndroidManifest.xml').read_text().replace('<manifest ', '<manifest package="love.onlyyours" android:versionCode="19" android:versionName="0.4.6" ',1).replace(' <uses-permission',' <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="35"/>\n <uses-permission',1)
  manifest=ET.fromstring(manifest)
  spec=importlib.util.spec_from_file_location('sdkbuild',root/'android-sdk-build.py');sdkbuild=importlib.util.module_from_spec(spec);spec.loader.exec_module(sdkbuild)
  (t/'firebase').mkdir();jars,resource_dirs,packages=sdkbuild.prepare(Path('/tmp/oy-firebase-sdk'),t/'firebase',manifest)
