@@ -1,0 +1,4 @@
+/** Routing hints deliberately exclude message bodies, files, SDP and private keys. */
+export function messageNotice(message){if(message.file)return undefined;return {kind:message.nudge?'nudge':'message',id:message.id,at:message.time}}
+export function callNotice(call){if(call.kind==='offer'&&!call.restart)return {kind:'call',id:call.id,phase:'ringing',video:!!call.video,at:call.time};if(['end','decline','busy'].includes(call.kind))return {kind:'call',id:call.id,phase:'ended',at:call.time};return undefined}
+export function readNotice(payload,now=Date.now()){try{const n=JSON.parse(payload).notice;if(!n||typeof n.id!=='string'||!n.id.length||n.id.length>80||!Number.isFinite(n.at)||n.at>now+300000)return null;if(['message','nudge'].includes(n.kind))return {kind:n.kind,id:n.id,at:n.at};if(n.kind==='call'&&['ringing','ended'].includes(n.phase)&&now-n.at<90000)return {kind:'call',id:n.id,phase:n.phase,video:!!n.video,at:n.at};return null}catch{return null}}

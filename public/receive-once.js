@@ -1,0 +1,2 @@
+/** Concurrent direct/relay copies wait for the same durable receive operation. */
+export function receiveOnce(handler){const pending=new Map();return message=>{if(pending.has(message.id))return pending.get(message.id);const work=Promise.resolve().then(()=>handler(message));pending.set(message.id,work);const clear=()=>{if(pending.get(message.id)===work)pending.delete(message.id)};work.then(clear,clear);return work}}

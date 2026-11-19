@@ -1,0 +1,5 @@
+export function giftSize(text=''){const length=Array.from(text).length;return length>240?'large':length>80?'medium':'small'}
+export function giftSeconds(text='',chosen=0){const n=Number(chosen);if([10,30,60].includes(n))return n;return Math.max(10,Math.min(60,Math.ceil(text.trim().split(/\s+/).filter(Boolean).length/3)+5))}
+export function viewLimit(message){return [0,1,2].includes(message.playLimit)?message.playLimit:message.once?1:0}
+// Record every opening durably before revealing content. Keep replay tombstones.
+export function consumeGift(vault,id){const m=vault.messages.find(m=>m.id===id),limit=m&&viewLimit(m);if(!m||(!m.once&&!m.gift)||m.opened||(m.mine&&limit>0)||(!m.file&&!m.text))return null;const remaining=limit?Math.max(0,limit-(m.viewsUsed||0)-1):null;const content={file:m.file,text:m.text||'',seconds:giftSeconds(m.text,m.giftDuration),remaining,limit};if(limit){m.viewsUsed=(m.viewsUsed||0)+1;if(remaining===0){m.opened=true;delete m.file;m.text='';vault.messages=vault.messages.filter(m=>m.id!==id);vault.deletedMessageIds=[...new Set([...(vault.deletedMessageIds||[]),id])]}}return content}

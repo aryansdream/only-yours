@@ -1,0 +1,10 @@
+export const MAX_ATTACHMENT_BYTES=2*1024*1024;
+export function fittedSize(width,height,maxEdge=1600){const scale=Math.min(1,maxEdge/Math.max(width,height));return {width:Math.max(1,Math.round(width*scale)),height:Math.max(1,Math.round(height*scale))}}
+export async function prepareAttachment(file,{decode=defaultDecode,encode=defaultEncode}={}){
+ if(!file)throw Error('Choose a file first');
+ if(!/^image\/(jpeg|png|webp|heic|heif)$/i.test(file.type||'')){if(file.size>MAX_ATTACHMENT_BYTES)throw Error('This file is larger than 2 MB. Choose a smaller file.');return file}
+ let image;try{image=await decode(file)}catch{if(file.size<=MAX_ATTACHMENT_BYTES)return file;throw Error('This photo format could not be resized. Choose a JPEG or PNG photo.')}
+ try{let size=fittedSize(image.width,image.height);for(const quality of [.84,.7,.56]){const blob=await encode(image,size,quality);if(blob&&blob.size<=950000)return new File([blob],(file.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg',lastModified:Date.now()})}size=fittedSize(image.width,image.height,1024);const blob=await encode(image,size,.48);if(!blob||blob.size>MAX_ATTACHMENT_BYTES)throw Error('Could not make this photo small enough. Choose a smaller photo.');return new File([blob],(file.name||'photo').replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg',lastModified:Date.now()})}finally{image.close?.()}
+}
+async function defaultDecode(file){if(globalThis.createImageBitmap)return createImageBitmap(file);return new Promise((resolve,reject)=>{const image=new Image(),url=URL.createObjectURL(file);image.onload=()=>{URL.revokeObjectURL(url);resolve(image)};image.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Could not read photo'))};image.src=url})}
+async function defaultEncode(image,size,quality){const c=document.createElement('canvas');c.width=size.width;c.height=size.height;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(image,0,0,c.width,c.height);return new Promise(resolve=>c.toBlob(resolve,'image/jpeg',quality))}
