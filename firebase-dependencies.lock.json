@@ -1,0 +1,548 @@
+[
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-messaging",
+    "version": "26.0.2",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-messaging-26.0.2.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-common",
+    "version": "23.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-common-23.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-components",
+    "version": "20.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-components-20.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-datatransport",
+    "version": "21.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-datatransport-21.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-encoders",
+    "version": "18.0.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/firebase-encoders-18.0.0.jar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-encoders-json",
+    "version": "19.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-encoders-json-19.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-encoders-proto",
+    "version": "17.0.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/firebase-encoders-proto-17.0.0.jar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-iid-interop",
+    "version": "17.1.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-iid-interop-17.1.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-installations",
+    "version": "20.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-installations-20.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-installations-interop",
+    "version": "18.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-installations-interop-18.0.0.aar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-measurement-connector",
+    "version": "19.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/firebase-measurement-connector-19.0.0.aar"
+  },
+  {
+    "group": "androidx.annotation",
+    "name": "annotation",
+    "version": "1.8.1",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/annotation-1.8.1.jar"
+  },
+  {
+    "group": "com.google.android.datatransport",
+    "name": "transport-api",
+    "version": "5.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/transport-api-5.0.0.aar"
+  },
+  {
+    "group": "com.google.android.datatransport",
+    "name": "transport-backend-cct",
+    "version": "5.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/transport-backend-cct-5.0.0.aar"
+  },
+  {
+    "group": "com.google.android.datatransport",
+    "name": "transport-runtime",
+    "version": "5.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/transport-runtime-5.0.0.aar"
+  },
+  {
+    "group": "com.google.android.gms",
+    "name": "play-services-base",
+    "version": "18.9.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/play-services-base-18.9.0.aar"
+  },
+  {
+    "group": "com.google.android.gms",
+    "name": "play-services-basement",
+    "version": "18.9.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/play-services-basement-18.9.0.aar"
+  },
+  {
+    "group": "com.google.android.gms",
+    "name": "play-services-tasks",
+    "version": "18.4.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/play-services-tasks-18.4.0.aar"
+  },
+  {
+    "group": "com.google.android.gms",
+    "name": "play-services-cloud-messaging",
+    "version": "17.4.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/play-services-cloud-messaging-17.4.0.aar"
+  },
+  {
+    "group": "com.google.android.gms",
+    "name": "play-services-stats",
+    "version": "17.0.2",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/play-services-stats-17.0.2.aar"
+  },
+  {
+    "group": "com.google.errorprone",
+    "name": "error_prone_annotations",
+    "version": "2.26.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/error_prone_annotations-2.26.0.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-stdlib",
+    "version": "2.1.21",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-stdlib-2.1.21.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-stdlib-jdk8",
+    "version": "2.1.21",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-stdlib-jdk8-2.1.21.jar"
+  },
+  {
+    "group": "javax.inject",
+    "name": "javax.inject",
+    "version": "1",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/javax.inject-1.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-coroutines-play-services",
+    "version": "1.10.2",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-coroutines-play-services-1.10.2.jar"
+  },
+  {
+    "group": "com.google.firebase",
+    "name": "firebase-annotations",
+    "version": "18.0.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/firebase-annotations-18.0.0.jar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-1.1.7.aar"
+  },
+  {
+    "group": "androidx.concurrent",
+    "name": "concurrent-futures",
+    "version": "1.1.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/concurrent-futures-1.1.0.jar"
+  },
+  {
+    "group": "androidx.collection",
+    "name": "collection",
+    "version": "1.1.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/collection-1.1.0.jar"
+  },
+  {
+    "group": "androidx.core",
+    "name": "core",
+    "version": "1.9.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/core-1.9.0.aar"
+  },
+  {
+    "group": "androidx.fragment",
+    "name": "fragment",
+    "version": "1.1.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/fragment-1.1.0.aar"
+  },
+  {
+    "group": "androidx.annotation",
+    "name": "annotation-jvm",
+    "version": "1.8.1",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/annotation-jvm-1.8.1.jar"
+  },
+  {
+    "group": "org.jetbrains",
+    "name": "annotations",
+    "version": "23.0.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/annotations-23.0.0.jar"
+  },
+  {
+    "group": "androidx.legacy",
+    "name": "legacy-support-core-utils",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/legacy-support-core-utils-1.0.0.aar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-coroutines-core-jvm",
+    "version": "1.10.2",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-coroutines-core-jvm-1.10.2.jar"
+  },
+  {
+    "group": "androidx.viewpager",
+    "name": "viewpager",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/viewpager-1.0.0.aar"
+  },
+  {
+    "group": "androidx.loader",
+    "name": "loader",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/loader-1.0.0.aar"
+  },
+  {
+    "group": "androidx.activity",
+    "name": "activity",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/activity-1.0.0.aar"
+  },
+  {
+    "group": "androidx.lifecycle",
+    "name": "lifecycle-viewmodel",
+    "version": "2.1.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/lifecycle-viewmodel-2.1.0.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-1.1.7.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences-android",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-android-1.1.7.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences-core",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-core-1.1.7.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-coroutines-core-1.7.3.jar"
+  },
+  {
+    "group": "androidx.documentfile",
+    "name": "documentfile",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/documentfile-1.0.0.aar"
+  },
+  {
+    "group": "androidx.localbroadcastmanager",
+    "name": "localbroadcastmanager",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/localbroadcastmanager-1.0.0.aar"
+  },
+  {
+    "group": "androidx.print",
+    "name": "print",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/print-1.0.0.aar"
+  },
+  {
+    "group": "com.google.guava",
+    "name": "listenablefuture",
+    "version": "1.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/listenablefuture-1.0.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-stdlib-jdk7",
+    "version": "2.1.21",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-stdlib-jdk7-2.1.21.jar"
+  },
+  {
+    "group": "androidx.annotation",
+    "name": "annotation-experimental",
+    "version": "1.3.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/annotation-experimental-1.3.0.aar"
+  },
+  {
+    "group": "androidx.lifecycle",
+    "name": "lifecycle-runtime",
+    "version": "2.3.1",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/lifecycle-runtime-2.3.1.aar"
+  },
+  {
+    "group": "androidx.versionedparcelable",
+    "name": "versionedparcelable",
+    "version": "1.1.1",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/versionedparcelable-1.1.1.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-android",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-android-1.1.7.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-core",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-core-1.1.7.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-core-okio",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-core-okio-1.1.7.jar"
+  },
+  {
+    "group": "androidx.savedstate",
+    "name": "savedstate",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/savedstate-1.0.0.aar"
+  },
+  {
+    "group": "androidx.lifecycle",
+    "name": "lifecycle-common",
+    "version": "2.3.1",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/lifecycle-common-2.3.1.jar"
+  },
+  {
+    "group": "androidx.arch.core",
+    "name": "core-common",
+    "version": "2.1.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/core-common-2.1.0.jar"
+  },
+  {
+    "group": "androidx.arch.core",
+    "name": "core-runtime",
+    "version": "2.1.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/core-runtime-2.1.0.aar"
+  },
+  {
+    "group": "androidx.lifecycle",
+    "name": "lifecycle-livedata",
+    "version": "2.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/lifecycle-livedata-2.0.0.aar"
+  },
+  {
+    "group": "androidx.customview",
+    "name": "customview",
+    "version": "1.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/customview-1.0.0.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences-core-jvm",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-core-jvm-1.1.7.jar"
+  },
+  {
+    "group": "com.squareup.okio",
+    "name": "okio",
+    "version": "3.4.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/okio-3.4.0.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-serialization-core",
+    "version": "1.6.3",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-serialization-core-1.6.3.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-serialization-protobuf",
+    "version": "1.6.3",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-serialization-protobuf-1.6.3.jar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-core-okio-jvm",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-core-okio-jvm-1.1.7.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "atomicfu",
+    "version": "0.17.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/atomicfu-0.17.0.jar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-core-jvm",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-core-jvm-1.1.7.jar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences-proto",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-proto-1.1.7.jar"
+  },
+  {
+    "group": "com.squareup.okio",
+    "name": "okio-jvm",
+    "version": "3.4.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/okio-jvm-3.4.0.jar"
+  },
+  {
+    "group": "androidx.lifecycle",
+    "name": "lifecycle-livedata-core",
+    "version": "2.0.0",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/lifecycle-livedata-core-2.0.0.aar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-core-android",
+    "version": "1.1.7",
+    "type": "aar",
+    "path": "/tmp/oy-firebase-sdk/datastore-core-android-1.1.7.aar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-serialization-core-jvm",
+    "version": "1.6.3",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-serialization-core-jvm-1.6.3.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "kotlinx-serialization-protobuf-jvm",
+    "version": "1.6.3",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlinx-serialization-protobuf-jvm-1.6.3.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-stdlib-common",
+    "version": "1.9.22",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-stdlib-common-1.9.22.jar"
+  },
+  {
+    "group": "androidx.datastore",
+    "name": "datastore-preferences-external-protobuf",
+    "version": "1.1.7",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/datastore-preferences-external-protobuf-1.1.7.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlinx",
+    "name": "atomicfu-jvm",
+    "version": "0.17.0",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/atomicfu-jvm-0.17.0.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-parcelize-runtime",
+    "version": "1.9.22",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-parcelize-runtime-1.9.22.jar"
+  },
+  {
+    "group": "org.jetbrains.kotlin",
+    "name": "kotlin-android-extensions-runtime",
+    "version": "1.9.22",
+    "type": "jar",
+    "path": "/tmp/oy-firebase-sdk/kotlin-android-extensions-runtime-1.9.22.jar"
+  }
+]

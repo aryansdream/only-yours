@@ -1,0 +1,11 @@
+data/
+node_modules/
+.env*
+.gradle/
+android/.gradle/
+android/local.properties
+android/app/build/
+android/development-signing.p12
+__pycache__/
+
+.vercel/
