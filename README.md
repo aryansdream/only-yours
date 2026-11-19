@@ -37,6 +37,6 @@ The production API uses a separately configured database and server-side credent
 
 ## Android development
 
-Open `android/` in Android Studio with the Android SDK, or use `build-android.py` with the installed SDK tools and dependencies. For a development build, set `ONLY_YOURS_DEV_KEY_PASSWORD` in your environment. The script creates a local development keystore if needed. The keystore is excluded from Git. Use your own protected production signing identity for a release; an APK signed with a different identity cannot update an existing installation without migration.
+Copy `android/app/src/main/res/values/firebase.example.xml` to `firebase.xml` in the same directory and fill in your Firebase app settings. Open `android/` in Android Studio with the Android SDK, or use `build-android.py` with the installed SDK tools and dependencies. For a development build, set `ONLY_YOURS_DEV_KEY_PASSWORD` in your environment. The script creates a local development keystore if needed. The keystore is excluded from Git. Use your own protected production signing identity for a release; an APK signed with a different identity cannot update an existing installation without migration.
 
 The repository contains source code. Download the currently hosted development APK from the install page.
