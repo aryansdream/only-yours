@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+ <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA"/>
+ <uses-permission android:name="android.permission.WAKE_LOCK"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+ <uses-permission android:name="android.permission.VIBRATE"/>
+ <uses-permission android:name="android.permission.CAMERA"/>
+ <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+ <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+ <uses-feature android:name="android.hardware.camera.any" android:required="false"/>
+ <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+ <application android:label="Only Yours" android:icon="@drawable/ic_only_yours" android:allowBackup="false" android:usesCleartextTraffic="false" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+  <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="false"/>
+  <meta-data android:name="firebase_analytics_collection_enabled" android:value="false"/>
+  <service android:name=".LovePushService" android:exported="false"><intent-filter><action android:name="com.google.firebase.MESSAGING_EVENT"/></intent-filter></service>
+  <provider android:name=".CameraFilesProvider" android:authorities="love.onlyyours.camera" android:exported="false" android:grantUriPermissions="true"/>
+  <service android:name=".LoveAlerts" android:exported="false" android:foregroundServiceType="remoteMessaging"/>
+  <service android:name=".ScreenShareService" android:exported="false" android:stopWithTask="true" android:foregroundServiceType="mediaProjection"/>
+  <service android:name=".CallService" android:exported="false" android:stopWithTask="true" android:foregroundServiceType="microphone|camera"/>
+  <activity android:name=".MainActivity" android:launchMode="singleTop" android:configChanges="orientation|screenSize|keyboardHidden|uiMode" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+ </application>
+</manifest>
