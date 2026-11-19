@@ -1,0 +1,14 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'love.onlyyours'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'love.onlyyours'
+        minSdk 30
+        targetSdk 35
+        versionCode 17
+        versionName '0.4.4'
+    }
+}
+
+dependencies { implementation "com.google.firebase:firebase-messaging:26.0.2" }
